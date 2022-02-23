@@ -112,7 +112,7 @@ public class FrogsAndToads2D {
         for (int i = 0; i <= ROWS - 1; i++){
             for (int j = 0; j <= COLS - 1; j++){
 
-                if(i == spaceRow && spaceCol - 1 <= COLS - 1 && spaceCol + 1 <= COLS - 1) {
+                if(i == spaceRow && spaceCol - 1 >= 0 && spaceCol + 1 <= COLS - 1) {
                     // 1. A Frog or Toad game piece can move directly into the empty space from the east or west.
                     if (grid[i][spaceCol - 1].equals(frog) || grid[i][spaceCol + 1].equals(toad)){
                         return true;
@@ -124,7 +124,7 @@ public class FrogsAndToads2D {
                         return true;
                     }
                 }
-                if(j == spaceCol && spaceRow - 1 <= ROWS - 1 && spaceRow + 1 <= ROWS - 1){
+                if(j == spaceCol && spaceRow - 1 >= 0 && spaceRow + 1 <= ROWS - 1){
                     // 3. A Frog or Toad game piece can move directly into the empty space from the north or south.
                     if (grid[spaceRow - 1][j].equals(frog) || grid[spaceRow + 1][j].equals(toad)){
                         return true;
